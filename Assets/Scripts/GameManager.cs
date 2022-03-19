@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         if (CurrentTopScore is null || CurrentTopScore.Score < score)
         {
             CurrentTopScore = new TopScore() { Name = UserName, Score = score };
+            SaveTopScore();
         }
     }
 
