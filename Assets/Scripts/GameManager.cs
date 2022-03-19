@@ -15,11 +15,10 @@ public class GameManager : MonoBehaviour
     {
         get => Application.persistentDataPath + "/topscore.jscon";
     }
-    private TopScore CurrentTopScore;
-
 
     public static GameManager Instance;
     
+    public TopScore CurrentTopScore;
     public string UserName;
 
     private void Awake()
