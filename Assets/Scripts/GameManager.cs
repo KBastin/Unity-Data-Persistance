@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SaveTopScore()
+    private void SaveTopScore()
     {
         if (CurrentTopScore != null)
         {
