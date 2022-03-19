@@ -11,16 +11,16 @@ public class GameManager : MonoBehaviour
         public string Name;
         public int Score;
     }
-    public string SaveLocation
+    private string SaveLocation
     {
         get => Application.persistentDataPath + "/topscore.jscon";
     }
+    private TopScore CurrentTopScore;
 
 
     public static GameManager Instance;
+    
     public string UserName;
-    public TopScore CurrentTopScore;
-
 
     private void Awake()
     {
@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            LoadTopScore();
         }
         else
         {
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void SaveTopScore()
+    public void SaveTopScore()
     {
         if (CurrentTopScore != null)
         {
